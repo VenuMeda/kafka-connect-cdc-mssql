@@ -1,0 +1,76 @@
+{
+  "databaseName": "cdc_testing",
+  "schemaName" : "dbo",
+  "tableName" : "users",
+  "expected" : {
+    "databaseName": "cdc_testing",
+    "schemaName" : "dbo",
+    "tableName" : "users",
+    "keyColumns" : [ "user_id" ],
+    "columnSchemas" : {
+      "user_id" : {
+        "type" : "INT64",
+        "isOptional" : false
+      },
+      "first_name" : {
+        "type" : "STRING",
+        "isOptional" : true
+      },
+      "last_name" : {
+        "type" : "STRING",
+        "isOptional" : true
+      },
+      "email" : {
+        "type" : "STRING",
+        "isOptional" : true
+      },
+      "gender" : {
+        "type" : "STRING",
+        "isOptional" : true
+      },
+      "ip_address" : {
+        "type" : "STRING",
+        "isOptional" : true
+      },
+      "company_name" : {
+        "type" : "STRING",
+        "isOptional" : true
+      },
+      "country_code" : {
+        "type" : "STRING",
+        "isOptional" : true
+      },
+      "latitude" : {
+        "name" : "org.apache.kafka.connect.data.Decimal",
+        "type" : "BYTES",
+        "version" : 1,
+        "parameters" : {
+          "scale" : "6"
+        },
+        "isOptional" : true
+      },
+      "longitude" : {
+        "name" : "org.apache.kafka.connect.data.Decimal",
+        "type" : "BYTES",
+        "version" : 1,
+        "parameters" : {
+          "scale" : "6"
+        },
+        "isOptional" : true
+      },
+      "account_balance" : {
+        "name" : "org.apache.kafka.connect.data.Decimal",
+        "type" : "BYTES",
+        "version" : 1,
+        "parameters" : {
+          "scale" : "6"
+        },
+        "isOptional" : true
+      },
+      "username" : {
+        "type" : "STRING",
+        "isOptional" : true
+      }
+    }
+  }
+}
