@@ -1,42 +1,52 @@
-<!--
-
-    Copyright © 2017 Jeremy Custenborder (jcustenborder@gmail.com)
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-
--->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
-
+    <parent>
+        <groupId>com.github.jcustenborder.kafka.connect</groupId>
+        <artifactId>kafka-connect-parent</artifactId>
+        <version>0.10.2.1-cp2</version>
+    </parent>
+    <artifactId>kafka-connect-cdc-mssql</artifactId>
+    <url>https://github.com/jcustenborder/kafka-connect-cdc-mssql</url>
+    <inceptionYear>2017</inceptionYear>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <scm>
+        <connection>scm:git:https://github.com/jcustenborder/kafka-connect-cdc-mssql.git</connection>
+        <developerConnection>scm:git:git@github.com:jcustenborder/kafka-connect-cdc-mssql.git</developerConnection>
+        <url>https://github.com/jcustenborder/kafka-connect-cdc-mssql</url>
+    </scm>
+    <issueManagement>
+        <system>github</system>
+        <url>https://github.com/jcustenborder/kafka-connect-cdc-mssql/issues</url>
+    </issueManagement>
+    <properties>
+        <sql.server.version>6.0.7130</sql.server.version>
+        <kafka.connect.cdc.version>[0.0.1.2,0.1.1000)</kafka.connect.cdc.version>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>com.github.jcustenborder.kafka.connect</groupId>
             <artifactId>kafka-connect-cdc</artifactId>
-            <version>${project.parent.version}</version>
+            <version>${kafka.connect.cdc.version}</version>
         </dependency>
         <dependency>
             <groupId>com.microsoft.sqlserver</groupId>
             <artifactId>sqljdbc4</artifactId>
-            <version>6.0.7130</version>
-            <!--<scope>provided</scope>-->
+            <version>${sql.server.version}</version>
+            <scope>provided</scope>
         </dependency>
-
-
         <dependency>
             <groupId>com.github.jcustenborder.kafka.connect</groupId>
             <artifactId>kafka-connect-cdc-test</artifactId>
-            <version>${project.parent.version}</version>
+            <version>${kafka.connect.cdc.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -46,15 +56,4 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-    <parent>
-        <groupId>com.github.jcustenborder.kafka.connect</groupId>
-        <artifactId>kafka-connect-cdc-parent</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-    </parent>
-
-    <artifactId>kafka-connect-cdc-mssql</artifactId>
-
-    <packaging>jar</packaging>
-
 </project>
