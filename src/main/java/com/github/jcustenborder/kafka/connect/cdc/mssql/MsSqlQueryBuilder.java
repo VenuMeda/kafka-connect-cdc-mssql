@@ -20,6 +20,8 @@ import com.google.common.base.Joiner;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Predicates;
 import com.google.common.collect.Collections2;
+import com.google.common.collect.LinkedListMultimap;
+import com.google.common.collect.Multimap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -46,13 +48,16 @@ class MsSqlQueryBuilder {
     this.connection = connection;
   }
 
-  String joinSelect(String table, Collection<String> keyColumns) {
-    List<String> selectColumns = new ArrayList<>(keyColumns.size());
+  String joinSelect(Multimap<String, String> columns) {
+    List<String> selectColumns = new ArrayList<>();
 
-    for (String keyColumn : keyColumns) {
-      selectColumns.add(
-          String.format("[%s].[%s]", table, keyColumn)
-      );
+    for (String table : columns.keySet()) {
+      final Collection<String> keyColumns = columns.get(table);
+      for (String keyColumn : keyColumns) {
+        selectColumns.add(
+            String.format("[%s].[%s]", table, keyColumn)
+        );
+      }
     }
 
     return Joiner.on(", ").join(selectColumns);
@@ -82,12 +87,16 @@ class MsSqlQueryBuilder {
     Collection<String> valueColumns = Collections2.filter(tableMetadata.columnSchemas().keySet(), Predicates.not(Predicates.in(tableMetadata.keyColumns())));
 
     String joinCriteria = joinCriteria(tableMetadata.keyColumns());
+    Multimap<String, String> adfs = LinkedListMultimap.create();
+    adfs.putAll("ct", tableMetadata.keyColumns());
+    adfs.putAll("u", valueColumns);
+
+
     final String sql = String.format("SELECT " +
             "[ct].[sys_change_version] AS [__metadata_sys_change_version], " +
             "[ct].[sys_change_creation_version] AS [__metadata_sys_change_creation_version], " +
             "[ct].[sys_change_operation] AS [__metadata_sys_change_operation], " +
-            joinSelect("ct", tableMetadata.keyColumns()) + ", " +
-            joinSelect("u", valueColumns) + " " +
+            joinSelect(adfs) + " " +
             "FROM [%s].[%s] AS [u] " +
             "RIGHT OUTER JOIN " +
             "CHANGETABLE(CHANGES [%s].[%s], ?) AS [ct] " +

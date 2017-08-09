@@ -130,6 +130,7 @@ class MsSqlTableMetadataProvider extends CachingTableMetadataProvider {
       case "nchar":
       case "nvarchar":
       case "ntext":
+      case "uniqueidentifier":
         builder = SchemaBuilder.string();
         break;
       case "smallmoney":

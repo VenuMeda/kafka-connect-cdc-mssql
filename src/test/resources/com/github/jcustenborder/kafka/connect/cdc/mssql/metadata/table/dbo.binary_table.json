@@ -1,0 +1,27 @@
+{
+  "databaseName" : "cdc_testing",
+  "schemaName" : "dbo",
+  "tableName" : "binary_table",
+  "expected" : {
+    "databaseName" : "cdc_testing",
+    "schemaName" : "dbo",
+    "tableName" : "binary_table",
+    "keyColumns" : [ "id" ],
+    "columnSchemas" : {
+      "id" : {
+        "type" : "INT64",
+        "parameters" : {
+          "com.github.jcustenborder.kafka.connect.cdc.change.column.name" : "id"
+        },
+        "isOptional" : false
+      },
+      "value" : {
+        "type" : "BYTES",
+        "parameters" : {
+          "com.github.jcustenborder.kafka.connect.cdc.change.column.name" : "value"
+        },
+        "isOptional" : true
+      }
+    }
+  }
+}

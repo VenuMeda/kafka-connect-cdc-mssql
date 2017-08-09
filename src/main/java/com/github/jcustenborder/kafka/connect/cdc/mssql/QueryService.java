@@ -120,10 +120,8 @@ class QueryService extends AbstractExecutionThreadService {
         long count = 0;
 
         try (ResultSet resultSet = statement.executeQuery()) {
-
-          long changeVersion = 0;
           while (resultSet.next()) {
-            changeVersion = resultSet.getLong("__metadata_sys_change_version");
+            final long changeVersion = resultSet.getLong("__metadata_sys_change_version");
 
             log.trace("{}: __metadata_sys_change_version = {}", changeKey, changeVersion);
 

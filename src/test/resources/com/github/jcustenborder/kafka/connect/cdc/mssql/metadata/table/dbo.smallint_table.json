@@ -1,0 +1,27 @@
+{
+  "databaseName" : "cdc_testing",
+  "schemaName" : "dbo",
+  "tableName" : "smallint_table",
+  "expected" : {
+    "databaseName" : "cdc_testing",
+    "schemaName" : "dbo",
+    "tableName" : "smallint_table",
+    "keyColumns" : [ "id" ],
+    "columnSchemas" : {
+      "id" : {
+        "type" : "INT64",
+        "parameters" : {
+          "com.github.jcustenborder.kafka.connect.cdc.change.column.name" : "id"
+        },
+        "isOptional" : false
+      },
+      "value" : {
+        "type" : "INT16",
+        "parameters" : {
+          "com.github.jcustenborder.kafka.connect.cdc.change.column.name" : "value"
+        },
+        "isOptional" : true
+      }
+    }
+  }
+}

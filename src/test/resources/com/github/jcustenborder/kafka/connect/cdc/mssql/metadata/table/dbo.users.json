@@ -1,0 +1,106 @@
+{
+  "databaseName" : "cdc_testing",
+  "schemaName" : "dbo",
+  "tableName" : "users",
+  "expected" : {
+    "databaseName" : "cdc_testing",
+    "schemaName" : "dbo",
+    "tableName" : "users",
+    "keyColumns" : [ "user_id" ],
+    "columnSchemas" : {
+      "user_id" : {
+        "type" : "INT64",
+        "parameters" : {
+          "com.github.jcustenborder.kafka.connect.cdc.change.column.name" : "user_id"
+        },
+        "isOptional" : false
+      },
+      "first_name" : {
+        "type" : "STRING",
+        "parameters" : {
+          "com.github.jcustenborder.kafka.connect.cdc.change.column.name" : "first_name"
+        },
+        "isOptional" : true
+      },
+      "last_name" : {
+        "type" : "STRING",
+        "parameters" : {
+          "com.github.jcustenborder.kafka.connect.cdc.change.column.name" : "last_name"
+        },
+        "isOptional" : true
+      },
+      "email" : {
+        "type" : "STRING",
+        "parameters" : {
+          "com.github.jcustenborder.kafka.connect.cdc.change.column.name" : "email"
+        },
+        "isOptional" : true
+      },
+      "gender" : {
+        "type" : "STRING",
+        "parameters" : {
+          "com.github.jcustenborder.kafka.connect.cdc.change.column.name" : "gender"
+        },
+        "isOptional" : true
+      },
+      "ip_address" : {
+        "type" : "STRING",
+        "parameters" : {
+          "com.github.jcustenborder.kafka.connect.cdc.change.column.name" : "ip_address"
+        },
+        "isOptional" : true
+      },
+      "company_name" : {
+        "type" : "STRING",
+        "parameters" : {
+          "com.github.jcustenborder.kafka.connect.cdc.change.column.name" : "company_name"
+        },
+        "isOptional" : true
+      },
+      "country_code" : {
+        "type" : "STRING",
+        "parameters" : {
+          "com.github.jcustenborder.kafka.connect.cdc.change.column.name" : "country_code"
+        },
+        "isOptional" : true
+      },
+      "latitude" : {
+        "name" : "org.apache.kafka.connect.data.Decimal",
+        "type" : "BYTES",
+        "version" : 1,
+        "parameters" : {
+          "scale" : "6",
+          "com.github.jcustenborder.kafka.connect.cdc.change.column.name" : "latitude"
+        },
+        "isOptional" : true
+      },
+      "longitude" : {
+        "name" : "org.apache.kafka.connect.data.Decimal",
+        "type" : "BYTES",
+        "version" : 1,
+        "parameters" : {
+          "scale" : "6",
+          "com.github.jcustenborder.kafka.connect.cdc.change.column.name" : "longitude"
+        },
+        "isOptional" : true
+      },
+      "account_balance" : {
+        "name" : "org.apache.kafka.connect.data.Decimal",
+        "type" : "BYTES",
+        "version" : 1,
+        "parameters" : {
+          "scale" : "6",
+          "com.github.jcustenborder.kafka.connect.cdc.change.column.name" : "account_balance"
+        },
+        "isOptional" : true
+      },
+      "username" : {
+        "type" : "STRING",
+        "parameters" : {
+          "com.github.jcustenborder.kafka.connect.cdc.change.column.name" : "username"
+        },
+        "isOptional" : true
+      }
+    }
+  }
+}

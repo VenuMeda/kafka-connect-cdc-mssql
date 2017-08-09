@@ -23,4 +23,7 @@ CREATE TABLE [dbo].[ntext_table] (
   id         BIGINT IDENTITY PRIMARY KEY NOT NULL,
   [value]    NTEXT
 );
-
+CREATE TABLE [dbo].[uniqueidentifier_table] (
+id         BIGINT IDENTITY PRIMARY KEY NOT NULL,
+[value]    UNIQUEIDENTIFIER
+);

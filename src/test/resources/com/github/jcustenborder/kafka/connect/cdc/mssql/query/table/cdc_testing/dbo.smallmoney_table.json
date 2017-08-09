@@ -1,20 +1,20 @@
 [ {
   "metadata" : {
     "sys_change_operation" : "I",
-    "sys_change_creation_version" : "2",
-    "sys_change_version" : "2"
+    "sys_change_creation_version" : "5",
+    "sys_change_version" : "5"
   },
   "sourcePartition" : {
     "databaseName" : "cdc_testing",
     "schemaName" : "dbo",
-    "tableName" : "float_table"
+    "tableName" : "smallmoney_table"
   },
   "sourceOffset" : {
-    "sys_change_version" : 2
+    "sys_change_version" : 5
   },
   "databaseName" : "cdc_testing",
   "schemaName" : "dbo",
-  "tableName" : "float_table",
+  "tableName" : "smallmoney_table",
   "changeType" : "INSERT",
   "timestamp" : 0,
   "keyColumns" : [ {
@@ -40,10 +40,13 @@
     }
   }, {
     "columnName" : "value",
-    "value" : 3.14,
+    "value" : 100.5200,
     "schema" : {
-      "type" : "FLOAT64",
+      "name" : "org.apache.kafka.connect.data.Decimal",
+      "type" : "BYTES",
+      "version" : 1,
       "parameters" : {
+        "scale" : "4",
         "com.github.jcustenborder.kafka.connect.cdc.change.column.name" : "value"
       },
       "isOptional" : true

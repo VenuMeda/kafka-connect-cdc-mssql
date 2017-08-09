@@ -29,5 +29,6 @@ ALTER TABLE [cdc_testing].[dbo].[datetime_table] ENABLE CHANGE_TRACKING WITH (TR
 ALTER TABLE [cdc_testing].[dbo].[datetime2_table] ENABLE CHANGE_TRACKING WITH (TRACK_COLUMNS_UPDATED = ON);
 ALTER TABLE [cdc_testing].[dbo].[time_table] ENABLE CHANGE_TRACKING WITH (TRACK_COLUMNS_UPDATED = ON);
 ALTER TABLE [cdc_testing].[dbo].[smalldatetime_table] ENABLE CHANGE_TRACKING WITH (TRACK_COLUMNS_UPDATED = ON);
+ALTER TABLE [cdc_testing].[dbo].[uniqueidentifier_table] ENABLE CHANGE_TRACKING WITH (TRACK_COLUMNS_UPDATED = ON);
 
 ALTER TABLE [cdc_testing].[dbo].[users] ENABLE CHANGE_TRACKING WITH (TRACK_COLUMNS_UPDATED = ON);

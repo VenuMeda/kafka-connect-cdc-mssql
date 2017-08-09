@@ -1,0 +1,29 @@
+{
+  "databaseName" : "cdc_testing",
+  "schemaName" : "dbo",
+  "tableName" : "date_table",
+  "expected" : {
+    "databaseName" : "cdc_testing",
+    "schemaName" : "dbo",
+    "tableName" : "date_table",
+    "keyColumns" : [ "id" ],
+    "columnSchemas" : {
+      "id" : {
+        "type" : "INT64",
+        "parameters" : {
+          "com.github.jcustenborder.kafka.connect.cdc.change.column.name" : "id"
+        },
+        "isOptional" : false
+      },
+      "value" : {
+        "name" : "org.apache.kafka.connect.data.Date",
+        "type" : "INT32",
+        "version" : 1,
+        "parameters" : {
+          "com.github.jcustenborder.kafka.connect.cdc.change.column.name" : "value"
+        },
+        "isOptional" : true
+      }
+    }
+  }
+}

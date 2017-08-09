@@ -1,20 +1,20 @@
 [ {
   "metadata" : {
     "sys_change_operation" : "I",
-    "sys_change_creation_version" : "2",
-    "sys_change_version" : "2"
+    "sys_change_creation_version" : "7",
+    "sys_change_version" : "7"
   },
   "sourcePartition" : {
     "databaseName" : "cdc_testing",
     "schemaName" : "dbo",
-    "tableName" : "float_table"
+    "tableName" : "time_table"
   },
   "sourceOffset" : {
-    "sys_change_version" : 2
+    "sys_change_version" : 7
   },
   "databaseName" : "cdc_testing",
   "schemaName" : "dbo",
-  "tableName" : "float_table",
+  "tableName" : "time_table",
   "changeType" : "INSERT",
   "timestamp" : 0,
   "keyColumns" : [ {
@@ -40,9 +40,11 @@
     }
   }, {
     "columnName" : "value",
-    "value" : 3.14,
+    "value" : 39000000,
     "schema" : {
-      "type" : "FLOAT64",
+      "name" : "org.apache.kafka.connect.data.Time",
+      "type" : "INT32",
+      "version" : 1,
       "parameters" : {
         "com.github.jcustenborder.kafka.connect.cdc.change.column.name" : "value"
       },

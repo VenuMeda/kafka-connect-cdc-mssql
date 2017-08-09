@@ -6,6 +6,7 @@
     </appender>
 
     <logger name="com.github.jcustenborder.kafka.connect.cdc" level="TRACE" />
+    <logger name="org.reflections.Reflections" level="ERROR" />
 
     <root level="INFO">
         <appender-ref ref="STDOUT" />

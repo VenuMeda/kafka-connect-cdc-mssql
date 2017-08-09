@@ -38,7 +38,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@Description("The Microsoft SQL Server connector utilizes [Change Tracking](https://msdn.microsoft.com/en-us/library/bb933875.aspx) " +
+@Description("The Microsoft SQL Server connector utilizes `Change Tracking <https://msdn.microsoft.com/en-us/library/bb933875.aspx>`_ " +
     "to identify changes. There are two ways to read the changes from the source system as they are generated. " +
     "[Change Data Capture](https://msdn.microsoft.com/en-us/library/cc645937.aspx) is a feature that is only available " +
     "on SQL Server Enterprise and Developer editions. [Change Tracking](https://msdn.microsoft.com/en-us/library/bb933875.aspx) " +

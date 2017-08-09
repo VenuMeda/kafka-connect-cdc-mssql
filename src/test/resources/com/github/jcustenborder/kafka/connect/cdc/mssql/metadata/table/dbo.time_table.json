@@ -1,0 +1,29 @@
+{
+  "databaseName" : "cdc_testing",
+  "schemaName" : "dbo",
+  "tableName" : "time_table",
+  "expected" : {
+    "databaseName" : "cdc_testing",
+    "schemaName" : "dbo",
+    "tableName" : "time_table",
+    "keyColumns" : [ "id" ],
+    "columnSchemas" : {
+      "id" : {
+        "type" : "INT64",
+        "parameters" : {
+          "com.github.jcustenborder.kafka.connect.cdc.change.column.name" : "id"
+        },
+        "isOptional" : false
+      },
+      "value" : {
+        "name" : "org.apache.kafka.connect.data.Time",
+        "type" : "INT32",
+        "version" : 1,
+        "parameters" : {
+          "com.github.jcustenborder.kafka.connect.cdc.change.column.name" : "value"
+        },
+        "isOptional" : true
+      }
+    }
+  }
+}

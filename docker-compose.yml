@@ -16,31 +16,6 @@
 
 version: "2"
 services:
-  zookeeper:
-    image: confluentinc/cp-zookeeper:3.2.1
-    ports:
-      - "2181:2181"
-    environment:
-      ZOOKEEPER_CLIENT_PORT: 2181
-  kafka:
-    image: confluentinc/cp-kafka:3.2.1
-    depends_on:
-      - zookeeper
-    ports:
-      - "9092:9092"
-    environment:
-      KAFKA_ZOOKEEPER_CONNECT: "zookeeper:2181"
-      KAFKA_ADVERTISED_LISTENERS: "plaintext://kafka:9092"
-  schema-registry:
-    image: confluentinc/cp-schema-registry:3.2.1
-    depends_on:
-      - kafka
-      - zookeeper
-    ports:
-      - "8081:8081"
-    environment:
-      SCHEMA_REGISTRY_KAFKASTORE_CONNECTION_URL: "zookeeper:2181"
-      SCHEMA_REGISTRY_HOST_NAME: schema-registry
   mssql:
     image: microsoft/mssql-server-linux
     environment:
