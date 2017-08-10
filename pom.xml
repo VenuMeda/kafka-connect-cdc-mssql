@@ -9,6 +9,7 @@
         <version>0.10.2.1-cp2</version>
     </parent>
     <artifactId>kafka-connect-cdc-mssql</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
     <url>https://github.com/jcustenborder/kafka-connect-cdc-mssql</url>
     <inceptionYear>2017</inceptionYear>
     <licenses>
