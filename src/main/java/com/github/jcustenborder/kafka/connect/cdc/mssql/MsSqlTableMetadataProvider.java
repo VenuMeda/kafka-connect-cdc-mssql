@@ -59,7 +59,7 @@ class MsSqlTableMetadataProvider extends CachingTableMetadataProvider {
           "OBJECTPROPERTY(OBJECT_ID(CONSTRAINT_SCHEMA+'.'+CONSTRAINT_NAME), 'IsPrimaryKey') = 1 AND " +
           "CONSTRAINT_SCHEMA = ? AND TABLE_NAME = ?";
   final static String COLUMN_DEFINITION_SQL =
-      "SELECT column_name, iif(is_nullable='YES', 1, 0) AS is_optional, data_type, " +
+      "SELECT column_name, CASE WHEN is_nullable='YES' THEN 1 ELSE 0 END AS is_optional, data_type, " +
           "numeric_scale FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? " +
           "ORDER BY ORDINAL_POSITION";
 
