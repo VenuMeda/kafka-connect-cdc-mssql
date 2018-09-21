@@ -56,7 +56,7 @@ class MsSqlTableMetadataProvider extends CachingTableMetadataProvider {
   private static Logger log = LoggerFactory.getLogger(MsSqlTableMetadataProvider.class);
   final static String PRIMARY_KEY_SQL =
       "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE WHERE " +
-          "OBJECTPROPERTY(OBJECT_ID(CONSTRAINT_SCHEMA+'.'+CONSTRAINT_NAME), 'IsPrimaryKey') = 1 AND " +
+          "OBJECTPROPERTY(OBJECT_ID(CONSTRAINT_SCHEMA+'.['+CONSTRAINT_NAME)+']', 'IsPrimaryKey') = 1 AND " +
           "CONSTRAINT_SCHEMA = ? AND TABLE_NAME = ?";
   final static String COLUMN_DEFINITION_SQL =
       "SELECT column_name, iif(is_nullable='YES', 1, 0) AS is_optional, data_type, " +
