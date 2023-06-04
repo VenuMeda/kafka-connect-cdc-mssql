@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* test by minjia 0604 */
 package com.github.jcustenborder.kafka.connect.cdc.mssql;
 
 import com.github.jcustenborder.kafka.connect.utils.BaseDocumentationTest;
